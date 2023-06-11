@@ -38,7 +38,7 @@ section label {
 
     border: 2px solid #6b9062;
     color: #6b9062;
-    resize: none;
+    resize: vertical;
     border-radius: 5px;
 }
 
