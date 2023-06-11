@@ -1,0 +1,43 @@
+h2 {
+    text-align: center;
+    color: #b22222; /* a deep, Christmas red */
+    padding: 10px;
+}
+
+.puzzle {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px dashed #b22222; /* make the border a dashed line for a little fun and in the same Christmas red */
+    border-radius: 5px;
+    width: 80%;
+}
+
+.puzzle h3 {
+    color: #6b9062; /* again using the evergreen color */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.puzzle p {
+    color: #6b9062; /* and the text in the same evergreen */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #b22222; /* nav bar in the Christmas red */
+    color: #ffffff;
+    padding: 10px 50px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #f8b229; /* when hovering over a link, it changes to a warm gold color */
+}

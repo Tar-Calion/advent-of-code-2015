@@ -1,0 +1,35 @@
+.image-main {
+    display: block;
+    margin: 20px auto;
+    max-width: 30%;
+    height: auto;
+}
+
+.list-of-days {
+    margin: 20px auto;
+    width: 30%;
+}
+
+.list-of-days ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-of-days ul li {
+    background-color: #6b9062; /* a muted, evergreen color */
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: center;
+}
+
+.list-of-days ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff; /* white color */
+    font-weight: bold;
+}
+
+.list-of-days ul li a:hover {
+    color: #f8b229; /* warm gold color on hover */
+}

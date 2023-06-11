@@ -8,3 +8,4 @@ TODO
 * Add Webpack
 * Add Babel
 * Add Sass
+* Create nav bar with JavaScript 
