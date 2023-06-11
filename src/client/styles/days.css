@@ -19,11 +19,48 @@ h2 {
     padding-bottom: 5px;
 }
 
-.puzzle p {
-    color: #6b9062; /* and the text in the same evergreen */
-    padding: 10px 0;
+.input {
+    margin-bottom: 20px;
 }
 
+section label {
+    color: #b22222; /* Christmas red for the input header */
+    font-weight: bold;
+    padding: 5px;
+    display: block;
+}
+
+.input textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+
+    border: 2px solid #6b9062;
+    color: #6b9062;
+    resize: none;
+    border-radius: 5px;
+}
+
+.input button {
+    background-color: #b22222; /* Christmas red for the button */
+    color: #ffffff; /* white color for the text on the button */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.input button:hover {
+    background-color: #f8b229; /* gold color for button hover */
+}
+
+.answer p {
+    color: #6b9062; /* evergreen color for the answer text */
+}
+
+/* Navigation bar */
 nav {
     display: flex;
     justify-content: space-between;
