@@ -50,10 +50,24 @@ section label {
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    transition-duration: 0.3s;
+}
+
+.input button:disabled,
+.input button:disabled:hover {
+    background-color: #ccc; /* Gray */
+    color: #888;
+    cursor: not-allowed;
 }
 
 .input button:hover {
     background-color: #f8b229; /* gold color for button hover */
+}
+
+.error-text {
+    color: orange; 
+    font-weight: bold;
+    padding: 5px;
 }
 
 .answer p {

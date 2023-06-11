@@ -1,6 +1,7 @@
 {
   "name": "advent-of-code-2015",
   "description": "Advent of Code 2015",
+  "type": "module",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.20.2",
