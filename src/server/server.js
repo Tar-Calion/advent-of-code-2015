@@ -1,12 +1,8 @@
 import * as day1 from './day1.js';
-import { fileURLToPath } from 'url';
-import path, {dirname} from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 
 // express server
@@ -21,7 +17,7 @@ app.use(cors());
 
 
 // static files
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static('src/client'));
 
 // routes
 
