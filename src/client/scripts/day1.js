@@ -1,4 +1,5 @@
 async function getAnswer() {
+
     /* get answer from the server. Send input */
     const input = document.getElementById('puzzle1-input').value;
     
@@ -13,7 +14,8 @@ async function getAnswer() {
     /* parse response */
     const jsonBody = await response.json();
     console.log(jsonBody);
-    return jsonBody.answer;
+    
+    document.getElementById('answer').innerHTML = jsonBody.answer;
 }
 
 function validate(event) {
@@ -34,11 +36,4 @@ function validate(event) {
 
 }
 
-/* listener for the button get-answer */
-document.getElementById('puzzle1-get-answer').addEventListener('click', async function () {
-    const answer = await getAnswer();
-    document.getElementById('answer').innerHTML = answer;
-} );
-
-/* listener for the input field validation on change.  */
-document.getElementById('puzzle1-input').addEventListener('input', validate);
+export {getAnswer, validate};
