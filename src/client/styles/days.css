@@ -68,10 +68,12 @@ section label {
     color: orange; 
     font-weight: bold;
     padding: 5px;
+    min-height: 1.1em;
 }
 
 .answer p {
     color: #6b9062; /* evergreen color for the answer text */
+    min-height: 1.1em;
 }
 
 /* Navigation bar */

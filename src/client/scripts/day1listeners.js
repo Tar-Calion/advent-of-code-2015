@@ -1,9 +1,4 @@
-import {getAnswer, validate} from "./day1.js";
+import {getAnswer} from "./day1.js";
 
-/* listener for the button get-answer */
-document.getElementById('puzzle1-get-answer').addEventListener('click', function (event) {
-    getAnswer().catch(error => console.error(error));
-});
-
-/* listener for the input field validation on change.  */
-document.getElementById('puzzle1-input').addEventListener('input', validate);
+/* listener for the input field on change.  */
+document.getElementById('puzzle1-input').addEventListener('input', getAnswer);
