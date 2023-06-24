@@ -2,31 +2,55 @@
  * @jest-environment jsdom
  */
 
-import { getAnswer } from '../../src/client/scripts/day1.js';
+import { getAnswer, validate } from '../../src/client/scripts/day1.js';
 
-global.fetch = jest.fn(() =>
-    Promise.resolve({
-        json: () => Promise.resolve({ answer: 'test' }),
-    })
-);
-
-let mockElement = {
-    value: 'inputValue',
-    innerHTML: '',
-    disabled: false,
-    addEventListener: jest.fn()
+const puzzleInputMock = {
+    value: 'inputValue'
 };
 
-document.getElementById = jest.fn().mockImplementation((selector) => mockElement);
+const answerMock = {
+    innerHTML: ''
+};
 
+const errorTextMock = {
+    innerHTML: ''
+};
+
+const getAnswerButtonMock = {
+    disabled: false
+};
+
+document.getElementById = jest.fn((id) => {
+    switch (id) {
+        case 'puzzle1-input':
+            return puzzleInputMock;
+        case 'answer':
+            return answerMock;
+        case 'puzzle1-error-text':
+            return errorTextMock;
+        case 'puzzle1-get-answer':
+            return getAnswerButtonMock;
+    }
+});
+
+
+beforeEach(() => {
+    fetch.mockClear();
+    document.getElementById.mockClear();
+    answerMock.innerHTML = '';
+    errorTextMock.innerHTML = '';
+    getAnswerButtonMock.disabled = false;
+    puzzleInputMock.value = 'inputValue';
+});
 
 describe('getAnswer', () => {
-    beforeEach(() => {
-        fetch.mockClear();
-        document.getElementById.mockClear();
-        mockElement.innerHTML = '';
-        mockElement.value = 'inputValue';
-    });
+
+    
+    global.fetch = jest.fn(() =>
+        Promise.resolve({
+            json: () => Promise.resolve({ answer: 'test' }),
+        })
+    );
 
     it('should make a POST request and update the DOM', async () => {
         await getAnswer();
@@ -41,6 +65,29 @@ describe('getAnswer', () => {
         });
 
         // Check if the DOM was updated correctly
-        expect(mockElement.innerHTML).toBe('test');
+        expect(answerMock.innerHTML).toBe('test');
     });
 });
+
+describe('validate', () => {
+    
+    it('should activate button if the input is valid', () => {
+        getAnswerButtonMock.disabled = true;
+        puzzleInputMock.value = '()';
+
+        validate({ target: puzzleInputMock });
+
+        expect(errorTextMock.innerHTML).toBe('');
+        expect(getAnswerButtonMock.disabled).toBe(false);
+    });
+
+    it('should deactivate button if the input is invalid', () => {
+        getAnswerButtonMock.disabled = false;
+        puzzleInputMock.value = '()invalid';
+
+        validate({ target: puzzleInputMock });
+
+        expect(errorTextMock.innerHTML).toBe('Only ( and ) are allowed');
+        expect(getAnswerButtonMock.disabled).toBe(true);
+    });
+} );
