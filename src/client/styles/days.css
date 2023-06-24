@@ -65,7 +65,7 @@ section label {
 }
 
 .error-text {
-    color: orange; 
+    color: orange;
     font-weight: bold;
     padding: 5px;
     min-height: 1.1em;
@@ -93,4 +93,11 @@ nav a {
 nav a:hover {
     text-decoration: underline;
     color: #f8b229; /* when hovering over a link, it changes to a warm gold color */
+}
+
+/* disabled text-area */
+[disabled] {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
 }

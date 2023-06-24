@@ -1,10 +1,13 @@
 
 function puzzle1(input) {
+
+    let floor = 0;
+    let basementPosition = -1;
     
     if (input == null) {
-        return 0;
+        return {floor, basementPosition};
     }
-    let floor = 0;
+    
     for (let i = 0; i < input.length; i++) {
         const c = input.charAt(i);
         if (c === '(') {
@@ -12,9 +15,12 @@ function puzzle1(input) {
         } else if (c === ')') {
             floor--;
         }
+        if(basementPosition === -1 && floor === -1){
+            basementPosition = i + 1;
+        }
     }
     
-    return floor;
+    return {floor, basementPosition};
 }
 
 export { puzzle1 };

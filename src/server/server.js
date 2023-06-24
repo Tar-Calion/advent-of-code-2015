@@ -4,12 +4,11 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 
-
 // express server
 const app = express();
 
 // body parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // cors
@@ -28,8 +27,8 @@ app.post('/day1/puzzle1', (req, res) => {
 
     const answer = day1.puzzle1(body.input);
 
-    res.send({ answer: answer });
-} );
+    res.send(answer);
+});
 
 
-export { app };
+export {app};
