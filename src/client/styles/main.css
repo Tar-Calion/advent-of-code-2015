@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'SantaSleighFull';
+    src: url('../fonts/SantasSleighFull.ttf') format('truetype');
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: SantaSleighFull, Arial, sans-serif;
+    font-size: 1.4em;
     margin: 0;
     padding: 0;
     background-color: #fafafa;
