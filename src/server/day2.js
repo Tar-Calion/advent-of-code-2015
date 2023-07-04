@@ -7,14 +7,14 @@ function solvePuzzle1(input) {
     const presents = input.split('\n');
 
     for (let present of presents) {
-        let paperArea = getParerArea(present);
+        let paperArea = getPaperArea(present);
         total += paperArea;
     }
 
     return total;
 }
 
-function getParerArea(present) {
+function getPaperArea(present) {
     if (present === '') {
         return 0;
     }
