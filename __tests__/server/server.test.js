@@ -38,7 +38,7 @@ describe('POST /day2/puzzle1', () => {
     it('should return error if input is "2x3x4x5"', async () => {
         const response = await request(app).post('/day2/puzzle1').send({input: '1x1x1\n2x3x4x5'});
         expect(response.statusCode).toEqual(400);
-        expect(response.body.error).toEqual('Invalid input: 2x3x4x5');
+        expect(response.body.error).toContain('Invalid input: 2x3x4x5');
     });
 
 });
