@@ -1,3 +1,5 @@
+import {getAnswerFromServer} from './serverConnector.js';
+
 async function getAnswer(event) {
     const input = event.target.value;
     console.log('input: ' + input);
@@ -11,7 +13,7 @@ async function getAnswer(event) {
 
     if (valid) {
         errorText.innerHTML = '';
-        let {floor, basementPosition} = await getAnswerFromServer();
+        let {floor, basementPosition} = await getAnswerFromServer('http://localhost:3000/day1/puzzle1', input);
         puzzle1Answer.innerHTML = floor;
         if (basementPosition >= 0) {
             puzzle2Answer.innerHTML = basementPosition;
@@ -25,24 +27,5 @@ async function getAnswer(event) {
     }
 }
 
-async function getAnswerFromServer() {
-
-    /* get answer from the server. Send input */
-    const input = document.getElementById('puzzle1-input').value;
-
-    const response = await fetch('http://localhost:3000/day1/puzzle1', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({input: input})
-    });
-
-    /* parse response */
-    const jsonBody = await response.json();
-    console.log(jsonBody);
-
-    return jsonBody
-}
 
 export {getAnswer};
