@@ -21,7 +21,7 @@ function getPaperArea(present) {
 
     const dimensions = present.split('x');
     if (dimensions.length !== 3) {
-        throw new Error('Invalid input: ' + present);
+        throwError(present);
     }
     const l = parseInt(dimensions[0]);
     const w = parseInt(dimensions[1]);
@@ -29,7 +29,7 @@ function getPaperArea(present) {
 
     if (isNaN(l) || isNaN(w) || isNaN(h) ||
         l <= 0 || w <= 0 || h <= 0) {
-        throw new Error('Invalid input: ' + present);
+        throwError(present)
     }
 
     const sides = [
@@ -41,6 +41,10 @@ function getPaperArea(present) {
     const smallestSide = Math.min(...sides);
     const surfaceArea = sides.reduce((a, b) => a + b, 0) * 2;
     return surfaceArea + smallestSide;
+}
+
+function throwError(present) {
+    throw new Error('Invalid input: ' + present + '. Expected format: "LxWxH" where L, W and H are positive integers.');
 }
 
 export {solvePuzzle1};

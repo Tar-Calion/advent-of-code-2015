@@ -40,6 +40,7 @@ app.post('/day2/puzzle1', (req, res) => {
         const answer = day2.solvePuzzle1(body.input);
         res.send({paperArea: answer});
     } catch (e) {
+        console.error(e);
         res.status(400).send({error: e.message});
     }
 
