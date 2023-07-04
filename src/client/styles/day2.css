@@ -1,0 +1,24 @@
+dialog {
+    width: 80%;
+    height: 80%;
+}
+
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dialog-container textarea {
+    flex-grow: 1;
+    resize: none;
+}
+
+.buttons-line {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-line button {
+    width: 40%;
+}

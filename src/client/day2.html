@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Day 2</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/days.css">
+    <link rel="stylesheet" href="styles/day2.css">
+    <script type="module" src="scripts/day2.js"></script>
+    <script type="module" src="scripts/day2listeners.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>Advent of Code 2015</h1>
+</header>
+
+<main>
+    <h2>Day 2: I Was Told There Would Be No Math</h2>
+
+    <article class="puzzle">
+        <h3>Part One: How many total square feet of wrapping paper should the elves order?</h3>
+        <section class="input">
+            <label for="puzzle1-input">Input:</label>
+            <!-- text area for input -->
+            <textarea id="puzzle1-input" name="input" placeholder="" disabled></textarea>
+            <button id="puzzle1-button">Input a list of presents</button>
+            <p class="error-text" id="puzzle1-error-text"></p>
+        </section>
+
+        <section class="answer">
+            <label>Answer:</label>
+            <p id="puzzle1-answer"></p>
+        </section>
+
+        <dialog id="puzzle1-dialog">
+            <div class="dialog-container">
+                <label for="puzzle1-dialog-input">Input a list of presents</label>
+                <textarea id="puzzle1-dialog-input" name="input" placeholder=""></textarea>
+                <div class="buttons-line">
+                    <button id="puzzle1-dialog-cancel">Cancel</button>
+                    <button id="puzzle1-dialog-submit">Submit</button>
+                </div>
+            </div>
+        </dialog>
+    </article>
+
+    <!--
+    <article class="puzzle">
+        <h3>Part Two: What is the position of the character that causes Santa to first enter the basement?</h3>
+        <section class="input">
+            <label for="puzzle2-input">Input:</label>
+            <textarea id="puzzle2-input" name="input"
+                      placeholder="" disabled></textarea>
+            <p class="error-text" id="puzzle2-error-text"></p>
+        </section>
+
+        <section class="answer">
+            <label>Answer:</label>
+            <p id="puzzle2-answer"></p>
+        </section>
+    </article>
+    -->
+</main>
+
+<!-- nav bar -->
+<nav>
+    <a href="day1.html"><<< Day 1</a>
+    <a href="index.html">Back to index</a>
+    <a href="day3.html">Day 3 >>></a>
+</nav>
+</body>
+</html>

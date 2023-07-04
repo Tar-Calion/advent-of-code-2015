@@ -23,14 +23,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-section label {
+label {
     color: #b22222; /* Christmas red for the input header */
     font-weight: bold;
     padding: 5px;
     display: block;
 }
 
-.input textarea {
+textarea {
     box-sizing: border-box;
     width: 100%;
     min-height: 100px;
@@ -42,7 +42,7 @@ section label {
     border-radius: 5px;
 }
 
-.input button {
+button {
     background-color: #b22222; /* Christmas red for the button */
     color: #ffffff; /* white color for the text on the button */
     padding: 10px;
@@ -53,14 +53,14 @@ section label {
     transition-duration: 0.3s;
 }
 
-.input button:disabled,
-.input button:disabled:hover {
+button:disabled,
+button:disabled:hover {
     background-color: #ccc; /* Gray */
     color: #888;
     cursor: not-allowed;
 }
 
-.input button:hover {
+button:hover {
     background-color: #f8b229; /* gold color for button hover */
 }
 
