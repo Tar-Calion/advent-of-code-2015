@@ -38,12 +38,14 @@ function closeDialog() {
 
     // set puzzle1-input to the value of the dialog input
     document.getElementById('puzzle1-input').value = textArea.value;
+    // save input to local storage
+    localStorage.setItem('day2-puzzle1-input', textArea.value);
 
     fetchAnswer();
 }
 
 async function fetchAnswer() {
-    const textArea = document.getElementById('puzzle1-dialog-input');
+    const textArea = document.getElementById('puzzle1-input')
     const input = textArea.value;
 
     const response = await getAnswerFromServer('http://localhost:3000/day2/puzzle1', input);
@@ -56,4 +58,13 @@ async function fetchAnswer() {
     }
 }
 
-export {showDialog, submitDialog, closeDialog, cancelDialog, fetchAnswer};
+function loadData() {
+    const textArea = document.getElementById('puzzle1-input');
+    const input = localStorage.getItem('day2-puzzle1-input');
+    if (input) {
+        textArea.value = input;
+        fetchAnswer();
+    }
+}
+
+export {showDialog, submitDialog, closeDialog, cancelDialog, fetchAnswer, loadData};

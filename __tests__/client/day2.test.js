@@ -18,7 +18,7 @@ const errorTextMock = {
 
 document.getElementById = jest.fn((id) => {
     switch (id) {
-        case 'puzzle1-dialog-input':
+        case 'puzzle1-input':
             return puzzleInputMock;
         case 'puzzle1-answer':
             return answer1Mock;
